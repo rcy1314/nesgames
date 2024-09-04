@@ -1,0 +1,244 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+   
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 0 0 0px #da4a4a, 0 0 0 0px #474f51;
+    background: #da4a4a;
+    height: 100%;
+   
+    padding: 10px;
+}
+
+
+.controller-area {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+}
+
+.action-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.controller {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    align-self: flex-end;
+    filter: drop-shadow(5px 5px 0px rgba(255, 255, 255, .8));
+}
+
+
+
+.controller::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    width: 56px;
+    height: 56px;
+    background: #857b7a;
+    transform: translate(-50%, -50%);
+}
+
+
+
+button.down.joydirection {
+    top: auto;
+    transform: translate(-50%, 0);
+    bottom: 0;
+    border-top: 0;
+    height: 50px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    box-shadow: inset 0px -8px 0 0px rgba(0, 0, 0, .1);
+}
+
+button.left.joydirection {
+    left: 0;
+    transform: translate(0, -50%);
+    border-right: 0;
+    width: 50px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: inset 0px 8px 0 0px rgba(255, 255, 255, .4), inset -8px 0px 0 0px #857b7a, inset -8px -8px 0 0px rgba(0, 0, 0, .1);
+}
+
+.function {
+    display: flex;
+ 
+    box-shadow: 5px 5px 0 rgba(255, 255, 255, .8);
+}
+
+.function button {
+    user-select: none;
+    margin: 10px;
+    height: 24px;
+    width: 60px;
+    outline: 0;
+    border: 8px solid #474f51;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, .1), inset 4px 4px 0 0px rgba(255, 255, 255, .4);
+    background: #857b7a;
+    color: transparent;
+    border-radius: 15px;
+}
+
+.action {
+    display: flex;
+    align-self: flex-end;
+}
+
+.action button {
+    user-select: none;
+    width: 56px;
+    height: 56px;
+    background: #857b7a;
+    border-radius: 50%;
+    outline: 0;
+    color: transparent;
+    border: 8px solid #474f51;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, .8), inset 5px 8px 0 0px rgba(255, 255, 255, .4), inset -5px -8px 0 0px rgba(0, 0, 0, .1);
+}
+
+.action button:first-child {
+    margin-right: 24px;
+}
+
+
+
+.sign::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -15px;
+    top: 0;
+   
+}
+
+.sign::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: -15px;
+    right: 0;
+
+}
+
+.joy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #857b7a;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    color: #f8f1d7;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.readme {
+    position: absolute;
+    left: 0;
+    top: 90px;
+    width: 90px;
+    height: 30px;
+    background: #857b7a;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #f8f1d7;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.screen {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    transition: .3s;
+    background: #000;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+
+
+@media screen and (orientation: portrait) {
+    /*竖屏 css*/
+  
+    .function {
+        position: absolute;
+        bottom: 0;
+        align-self: flex-end;
+        transform: translateX(20px);
+        padding: 8px 10px;
+        border-radius: 50px 0 0 50px;
+        box-shadow: 0px 5px 0 rgba(255, 255, 255, .8);
+    }
+    .function::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        right: 0;
+
+    }
+    .function::after {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+ 
+        right: 0;
+       
+    }
+    .screen {
+        margin-bottom: 0;
+        max-height: 300px;
+    }
+    .function button {
+        width: 56px;
+        margin: 10px;
+    }
+    .action-area {
+        flex: 1;
+        justify-content: flex-end;
+    }
+    .action button:first-child {
+        margin-right: 20px
+    }
+}
